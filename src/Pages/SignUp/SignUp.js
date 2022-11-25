@@ -1,10 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import log from '../../assets/images/Login.jpg'
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-    const { register, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { createUser, updateUser } = useContext(AuthContext);
+    const [signUpError, setSignUPError] = useState('')
+    const navigate = useNavigate();
+    const handleSignUp = (data) => {
+        setSignUPError('');
+        createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast('User Created Successfully.')
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                        navigate('/');
+                    })
+                    .catch(err => console.log(err));
+            })
+            .catch(error => {
+                console.log(error)
+                setSignUPError(error.message)
+            });
+
+    }
     return (
         <div className="hero mx-auto  w-full my-20 ">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col  lg:flex-row">
@@ -13,7 +40,7 @@ const SignUp = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 shadow-slate-800/50">
                     <h1 className="text-2xl text-center font-bold">Sign up</h1>
-                    <form className="card-body">
+                    <form onSubmit={handleSubmit(handleSignUp)} className="card-body">
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Name</span></label>
                             <input type="text" {...register("name", {
@@ -38,7 +65,7 @@ const SignUp = () => {
                             {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                         </div>
                         <input className='btn btn-outline w-full mt-4' value="Sign Up" type="submit" />
-                        {/* {signUpError && <p className='text-red-600'>{signUpError}</p>} */}
+                        {signUpError && <p className='text-red-600'>{signUpError}</p>}
                     </form>
                     <p className='text-center mb-4'>Already have an account? <Link className='text-black font-bold btn-link' to="/login">Log in</Link> </p>
 
