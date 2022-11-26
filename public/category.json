@@ -1,0 +1,17 @@
+[
+    {
+        "category_id": "01",
+        "img": "https://images.pexels.com/photos/14328581/pexels-photo-14328581.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "name": "Asus"
+    },
+    {
+        "category_id": "02",
+        "img": "https://images.pexels.com/photos/434346/pexels-photo-434346.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "name": "MacBook"
+    },
+    {
+        "category_id": "03",
+        "img": "https://images.pexels.com/photos/6452/laptop-notebook-technology-white-6452.jpg?auto=compress&cs=tinysrgb&w=600",
+        "name": "Acer"
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "category_id": "01",
+        "brand": "Asus",
+        "product-name": "Zenbook 14 OLED",
+        "location": "dhaka",
+        "image": "https://dlcdnwebimgs.asus.com/gain/ddd8dcda-aefc-4287-9bba-10096ce0d4bc/w800",
+        "resale_price": 50000,
+        "original_price": 90000,
+        "used_time": "2 years",
+        "posted_time": "2/10/5 10.0AM",
+        "seller_name": "Loid Forger"
+    },
+    {
+        "category_id": "01",
+        "brand": "Asus",
+        "product-name": "Zenbook Flip S13 OLED",
+        "location": "dhaka",
+        "image": "https://dlcdnwebimgs.asus.com/gain/81910469-cbfc-4346-a239-e2809fa72843/w800",
+        "resale_price": 50000,
+        "original_price": 90000,
+        "used_time": "2 years",
+        "posted_time": "2/10/5 10.0AM",
+        "seller_name": "Loid"
+    },
+    {
+        "category_id": "01",
+        "brand": "Asus",
+        "product-name": "Zenbook Duo UX481",
+        "location": "dhaka",
+        "image": "https://dlcdnwebimgs.asus.com/gain/81910469-cbfc-4346-a239-e2809fa72843/w800",
+        "resale_price": 81000,
+        "original_price": 120000,
+        "used_time": "2 years",
+        "posted_time": "2/10/5 10.0AM",
+        "seller_name": "Anya"
+    },
+    {
+        "category_id": "02",
+        "brand": "MacBook",
+        "product-name": "MacBook Air",
+        "location": "dhaka",
+        "image": "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "resale_price": 81000,
+        "original_price": 120000,
+        "used_time": "2 years",
+        "posted_time": "2/10/5 10.0AM",
+        "seller_name": "yor"
+    },
+    {
+        "category_id": "02",
+        "brand": "MacBook",
+        "product-name": "MacBook Air 13",
+        "location": "dhaka",
+        "image": "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "resale_price": 71000,
+        "original_price": 120000,
+        "used_time": "2 years",
+        "posted_time": "2/10/5 10.0AM",
+        "seller_name": "yor"
+    },
+    {
+        "category_id": "02",
+        "brand": "MacBook",
+        "product-name": "MacBook Air 14",
+        "location": "dhaka",
+        "image": "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "resale_price": 61000,
+        "original_price": 900000,
+        "used_time": "2 years",
+        "posted_time": "2/10/5 10.0AM",
+        "seller_name": "yor"
+    },
+    {
+        "category_id": "03",
+        "brand": "Acer",
+        "product-name": "Acer ENDURO Urban N3",
+        "location": "dhaka",
+        "image": "https://images.acer.com/is/image/acer/ENDURO-Urban-N3-EUN314-51W-Bl1-wallpaper-win11-01?$Series-Component-XL$",
+        "resale_price": 61000,
+        "original_price": 900000,
+        "used_time": "4 years",
+        "posted_time": "2/10/22 10.0AM",
+        "seller_name": "yor"
+    },
+    {
+        "category_id": "03",
+        "brand": "Acer",
+        "product-name": "Acer ENDURO Urban N3",
+        "location": "dhaka",
+        "image": "https://images.acer.com/is/image/acer/ENDURO-Urban-N3-EUN314-51W-Bl1-wallpaper-win11-01?$Series-Component-XL$",
+        "resale_price": 61000,
+        "original_price": 900000,
+        "used_time": "1 years",
+        "posted_time": "2/10/22 10.0AM",
+        "seller_name": "yor"
+    },
+    {
+        "category_id": "03",
+        "brand": "Acer",
+        "product-name": "Acer ENDURO Urban N3",
+        "location": "dhaka",
+        "image": "https://images.acer.com/is/image/acer/ENDURO-Urban-N3-EUN314-51W-Bl1-wallpaper-win11-01?$Series-Component-XL$",
+        "resale_price": 61000,
+        "original_price": 900000,
+        "used_time": "5 years",
+        "posted_time": "2/10/22 10.0AM",
+        "seller_name": "yor"
+    }
+]
