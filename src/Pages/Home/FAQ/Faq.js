@@ -17,7 +17,7 @@ const Faq = () => {
                     Is there a manufacturer warranty on these products?
                 </div>
                 <div className="collapse-content bg-primary text-center text-primary-content group-focus:bg-primary group-focus:text-secondary-content">
-                    <p>All Used products with a manufacturer warranty must be classified under the Offer Condition "Refurbished" by the Seller on Amazon. Only products that carry a manufacturer warranty can be classified as Refurbished. Used products under any other Offer Condition may or may not carry a Seller warranty. In case such a warranty is applicable it will be called out in the detailed description of the offer. </p>
+                    <p>All Used products with a manufacturer warranty must be classified under the Offer Condition "Refurbished" by the Seller on laptop swappers. Only products that carry a manufacturer warranty can be classified as Refurbished. Used products under any other Offer Condition may or may not carry a Seller warranty. In case such a warranty is applicable it will be called out in the detailed description of the offer. </p>
                 </div>
             </div>
         </div>
