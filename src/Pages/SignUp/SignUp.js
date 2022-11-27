@@ -9,7 +9,9 @@ const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUPError] = useState('')
+
     const navigate = useNavigate();
+
     const handleSignUp = (data) => {
         setSignUPError('');
         createUser(data.email, data.password)
@@ -19,17 +21,43 @@ const SignUp = () => {
                 toast('User Created Successfully.')
                 const userInfo = {
                     displayName: data.name
+
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        navigate('/');
+                        saveUser(data.name, data.email, data.role)
+
                     })
                     .catch(err => console.log(err));
             })
+
             .catch(error => {
                 console.log(error)
                 setSignUPError(error.message)
             });
+
+        const saveUser = (name, email, role) => {
+
+            const user = {
+                name,
+                email,
+                role
+            }
+            console.log(user)
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    navigate('/');
+                })
+        }
+
 
     }
     return (
@@ -63,6 +91,14 @@ const SignUp = () => {
                                 pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must have uppercase, number and special characters' }
                             })} className="input input-bordered w-full max-w-xs" />
                             {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+                            <select
+                                {...register('role')}
+                                className="select select-ghost mt-2 w-full max-w-xs">
+                                <option disabled selected>Select your account type</option>
+                                <option value='seller' >seller</option>
+                                <option value='buyer' >buyer</option>
+
+                            </select>
                         </div>
                         <input className='btn btn-outline w-full mt-4' value="Sign Up" type="submit" />
                         {signUpError && <p className='text-red-600'>{signUpError}</p>}

@@ -25,7 +25,8 @@ const BookingModal = ({ product, setProduct }) => {
             email,
             phone,
             book_product,
-            location
+            location,
+            resale_price
         }
         fetch('http://localhost:5000/bookings', {
             method: 'POST',
