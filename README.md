@@ -1,3 +1,20 @@
+### Title of the website
+Laptop Swappers
+### Objective of the Projects
+This project is about a used product resale website where anyone can buy and sell used products. My website is based on second hand laptop resale site. 
+### Frameworks
+Here I have used tailwind css and daisy ui for designing purpose.
+Functionalities are done by react js.
+### Features
+In homepage there is a section where you can see category of products
+Booking Modal will open while booking a particular product.
+Buyer , Seller and Admin have specific access.
+Admin can control the users and sellers
+Firebase login signup
+Jwt token is used
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

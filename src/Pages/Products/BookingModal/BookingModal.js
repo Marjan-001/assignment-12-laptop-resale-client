@@ -2,12 +2,48 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
-const BookingModal = ({ product }) => {
+const BookingModal = ({ product, setProduct }) => {
     const { user } = useContext(AuthContext)
-    const { product_name } = product;
+    const { product_name, resale_price, image } = product;
     const handleBooking = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const phone = form.phone.value;
+        const book_product = form.product_name.value;
+        const location = form.location.value;
+        console.log(name, email, phone, book_product, location)
 
-        toast.success('Booked Successfully')
+
+
+
+
+        const booking = {
+            image,
+            name,
+            email,
+            phone,
+            book_product,
+            location
+        }
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    setProduct(null)
+                    toast.success('Booked Successfully')
+                }
+            })
+        // console.log(booking)
     }
     return (
         <>
@@ -20,8 +56,8 @@ const BookingModal = ({ product }) => {
 
                         <input name="name" type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Email Address" className="input w-full input-bordered" />
-                        <input name="product_name" type="text" defaultValue={product?.product_name} disabled placeholder="Item Name" className="input w-full input-bordered" />
-                        <input name="price" type="text" defaultValue={product?.resale_price} disabled placeholder="Price" className="input w-full input-bordered" />
+                        <input name="product_name" type="text" Value={product_name} disabled placeholder="Item Name" className="input w-full input-bordered" />
+                        <input name="price" type="text" Value={resale_price} disabled placeholder="Price" className="input w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" required />
                         <input name="location" type="text" placeholder="Location" className="input w-full input-bordered" required />
                         <br />
