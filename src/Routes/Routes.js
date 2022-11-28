@@ -1,5 +1,6 @@
 import DashboardLayout from "../Layout/DashboardLayout";
 import Blog from "../Pages/Blog/Blog";
+import AllBuyers from "../Pages/DashBoard/AllBuyers/AllBuyers";
 import AllSellers from "../Pages/DashBoard/AllSellers/AllSellers";
 
 import DashBoard from "../Pages/DashBoard/DashBoard/DashBoard";
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allsellers',
                 element: <AllSellers></AllSellers>
+            },
+            {
+                path: '/dashboard/allbuyers',
+                element: <AllBuyers></AllBuyers>
             }
         ]
     }
