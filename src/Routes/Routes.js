@@ -1,10 +1,12 @@
 import DashboardLayout from "../Layout/DashboardLayout";
 import Blog from "../Pages/Blog/Blog";
+import AddAProduct from "../Pages/DashBoard/AddAProduct/AddAProduct";
 import AllBuyers from "../Pages/DashBoard/AllBuyers/AllBuyers";
 import AllSellers from "../Pages/DashBoard/AllSellers/AllSellers";
 
 import DashBoard from "../Pages/DashBoard/DashBoard/DashBoard";
 import MyOrders from "../Pages/DashBoard/MyOrder/MyOrders";
+import MyProducts from "../Pages/DashBoard/MyProducts/MyProducts";
 import ErrorPage from "../Pages/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Products from "../Pages/Products/Products";
@@ -46,6 +48,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
+        errorElement: <ErrorPage></ErrorPage>,
         element: <DashboardLayout></DashboardLayout>,
         children: [
             {
@@ -59,6 +62,15 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allbuyers',
                 element: <AllBuyers></AllBuyers>
+            },
+            {
+                path: '/dashboard/myproducts/:email',
+                loader: ({ params }) => fetch(`http://localhost:5000/addedproducts/${params.email}`),
+                element: <MyProducts></MyProducts>
+            },
+            {
+                path: '/dashboard/addaproduct',
+                element: <AddAProduct></AddAProduct>
             }
         ]
     }

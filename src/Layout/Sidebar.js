@@ -2,11 +2,14 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
+import useSeller from '../hooks/useSeller';
 
 
 const Sidebar = () => {
     const { user } = useContext(AuthContext)
     const [isAdmin] = useAdmin(user?.email);
+    const [isSeller] = useSeller(user?.email);
+
     return (
         <div className="drawer-side">
             <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
@@ -24,6 +27,13 @@ const Sidebar = () => {
                     isAdmin &&
                     <li><Link to='/dashboard/allbuyers'>All Buyers</Link></li>
                 }
+                {isSeller &&
+                    <li><Link to={`/dashboard/myproducts/${user.email}`}>My Products</Link></li>
+                }
+                {isSeller &&
+                    <li><Link to='/dashboard/addaproduct'>Add a Product</Link></li>
+                }
+
             </ul>
 
         </div>
