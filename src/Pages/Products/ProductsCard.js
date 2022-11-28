@@ -4,6 +4,7 @@ const ProductsCard = ({ laptop, setProduct }) => {
 
     const { product_name, seller_name, posted_time, location, image, resale_price, original_price, used_time } = laptop;
     console.log(product_name)
+
     return (
         <div className=' w-96 bg-black shadow-xl '>
             <figure><img src={image} className='w-full h-52' alt="Shoes" /></figure>

@@ -52,7 +52,7 @@ const AddAProduct = () => {
 
 
                     }
-                    fetch(`http://localhost:5000/addedproducts/${user.email}`, {
+                    fetch('http://localhost:5000/addedproducts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -97,7 +97,7 @@ const AddAProduct = () => {
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label"> <span className="label-text">Seller Email</span></label>
-                    <input type="text" defaultValue={user.email} className="input input-bordered border-blue-700 w-full max-w-xs" />
+                    <input type="text" defaultValue={user?.email} className="input input-bordered border-blue-700 w-full max-w-xs" />
 
                 </div>
                 <div className="form-control w-full max-w-xs">
