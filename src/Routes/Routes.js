@@ -1,5 +1,7 @@
 import DashboardLayout from "../Layout/DashboardLayout";
 import Blog from "../Pages/Blog/Blog";
+import AllSellers from "../Pages/DashBoard/AllSellers/AllSellers";
+
 import DashBoard from "../Pages/DashBoard/DashBoard/DashBoard";
 import MyOrders from "../Pages/DashBoard/MyOrder/MyOrders";
 import ErrorPage from "../Pages/ErrorPage";
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/allsellers',
+                element: <AllSellers></AllSellers>
             }
         ]
     }
