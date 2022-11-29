@@ -1,5 +1,9 @@
 ### Title of the website
 Laptop Swappers
+### Admin email and pass
+adminEmail: \<admin40@admin.com>\
+adminPassword: \<aDmin40!>
+
 ### Objective of the Projects
 This project is about a used product resale website where anyone can buy and sell used products. My website is based on second hand laptop resale site. 
 ### Frameworks
@@ -11,7 +15,7 @@ Booking Modal will open while booking a particular product.
 Buyer , Seller and Admin have specific access.
 Admin can control the users and sellers
 Firebase login signup
-Jwt token is used
+
 
 
 

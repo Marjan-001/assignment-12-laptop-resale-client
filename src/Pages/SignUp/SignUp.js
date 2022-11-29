@@ -98,6 +98,7 @@ const SignUp = () => {
                                 <option value='seller' >seller</option>
                                 <option value='buyer' >buyer</option>
 
+
                             </select>
                         </div>
                         <input className='btn btn-outline w-full mt-4' value="Sign Up" type="submit" />

@@ -10,6 +10,7 @@ const Sidebar = () => {
     const [isAdmin] = useAdmin(user?.email);
     const [isSeller] = useSeller(user?.email);
 
+
     return (
         <div className="drawer-side">
             <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
@@ -19,7 +20,8 @@ const Sidebar = () => {
 
                     <li><Link to='/dashboard'>My Orders</Link></li>
                 }
-                {isAdmin &&
+                {
+                    isAdmin &&
 
                     <li><Link to='/dashboard/allsellers'>All Sellers</Link></li>
                 }
