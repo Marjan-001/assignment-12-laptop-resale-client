@@ -3,6 +3,8 @@ import React from 'react';
 
 const AllSellers = () => {
 
+
+
     const { data: sellers = [] } = useQuery({
 
         queryKey: ['sellers'],
@@ -12,7 +14,8 @@ const AllSellers = () => {
             const data = await res.json();
             return data;
         }
-    })
+    });
+
     return (
         <div>
             <div className="overflow-x-auto">

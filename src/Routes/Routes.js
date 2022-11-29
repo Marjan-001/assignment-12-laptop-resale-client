@@ -11,6 +11,9 @@ import Payment from "../Pages/DashBoard/Payment/Payment";
 import ErrorPage from "../Pages/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Products from "../Pages/Products/Products";
+// import AdminRoute from "../Pages/Route/AdminRoute/AdminRoute";
+import PrivateRoute from "../Pages/Route/PrivateRoute/PrivateRoute";
+// import SellerRoute from "../Pages/Route/SellerRoute/SellerRoute";
 
 import SignUp from "../Pages/SignUp/SignUp";
 
@@ -42,7 +45,7 @@ const router = createBrowserRouter([
             }, {
                 path: '/categories/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
-                element: <Products></Products>
+                element: <PrivateRoute> <Products></Products></PrivateRoute>
 
             }
         ]

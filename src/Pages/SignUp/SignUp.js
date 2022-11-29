@@ -70,14 +70,14 @@ const SignUp = () => {
                     <h1 className="text-2xl text-center font-bold">Sign up</h1>
                     <form onSubmit={handleSubmit(handleSignUp)} className="card-body">
                         <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Name</span></label>
+                            <label className="label"> <span className="label-text">Name in lowercase</span></label>
                             <input type="text" {...register("name", {
                                 required: "Name is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                             {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
                         </div>
                         <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Email</span></label>
+                            <label className="label"> <span className="label-text">Email in lowercase</span></label>
                             <input type="email" {...register("email", {
                                 required: true
                             })} className="input input-bordered w-full max-w-xs" />
