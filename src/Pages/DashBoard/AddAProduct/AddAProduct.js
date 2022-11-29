@@ -17,7 +17,7 @@ const AddAProduct = () => {
     const { data: brands = [], isLoading } = useQuery({
         queryKey: ['name'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/brand');
+            const res = await fetch('https://assignment-12-laptop-resale-server.vercel.app/brand');
             const data = await res.json();
             return data;
         }
@@ -52,7 +52,7 @@ const AddAProduct = () => {
 
 
                     }
-                    fetch('http://localhost:5000/addedproducts', {
+                    fetch('https://assignment-12-laptop-resale-server.vercel.app/addedproducts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

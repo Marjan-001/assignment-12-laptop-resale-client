@@ -44,7 +44,7 @@ const router = createBrowserRouter([
                 element: <Blog></Blog>
             }, {
                 path: '/categories/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-12-laptop-resale-server.vercel.app/categories/${params.id}`),
                 element: <PrivateRoute> <Products></Products></PrivateRoute>
 
             }
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/myproducts/:email',
-                loader: ({ params }) => fetch(`http://localhost:5000/addedproducts/${params.email}`),
+                loader: ({ params }) => fetch(`https://assignment-12-laptop-resale-server.vercel.app/addedproducts/${params.email}`),
                 element: <MyProducts></MyProducts>
             },
             {
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-12-laptop-resale-server.vercel.app/bookings/${params.id}`)
             }
         ]
     }

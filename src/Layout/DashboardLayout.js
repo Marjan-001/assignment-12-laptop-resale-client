@@ -12,7 +12,7 @@ const DashboardLayout = () => {
     useEffect(() => {
 
 
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://assignment-12-laptop-resale-server.vercel.app/users`)
 
             .then(res => res.json())
             .then(data => {
@@ -22,7 +22,7 @@ const DashboardLayout = () => {
     }, [])
     console.log(roles)
 
-    // const url = `http://localhost:5000/users`;
+    // const url = `https://assignment-12-laptop-resale-server.vercel.app/users`;
 
     // const { data: users = [] } = useQuery({
     //     queryKey: ['role', user?.role],

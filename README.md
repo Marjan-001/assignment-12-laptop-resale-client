@@ -1,5 +1,7 @@
 ### Title of the website
 Laptop Swappers
+### live site link
+https://laptop-swappers.web.app
 ### Admin email and pass
 adminEmail: \<admin40@admin.com>\
 adminPassword: \<aDmin40!>
