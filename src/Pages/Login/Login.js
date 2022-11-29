@@ -3,10 +3,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import log from '../../assets/images/Login.jpg'
 import { AuthContext } from '../../contexts/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 const Login = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { signIn } = useContext(AuthContext);
+    const { signIn, providerLogin } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
@@ -26,6 +27,19 @@ const Login = () => {
                 console.log(error.message)
                 setLoginError(error.message);
             });
+    }
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGoogleSignIn = () => {
+
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+        navigate(from, { replace: true });
+
     }
 
     return (
@@ -64,7 +78,7 @@ const Login = () => {
                     </form>
                     <p className='text-center mb-4'>Don't have an account <Link className='text-black font-bold btn-link' to="/signup">Sign Up</Link> </p>
                     <div className="divider">OR</div>
-                    <button className='btn bt-sm btn-outline flex content-center w-3/4 mx-auto mb-10'>CONTINUE WITH GOOGLE</button>
+                    <button onClick={handleGoogleSignIn} className='btn bt-sm btn-outline flex content-center w-3/4 mx-auto mb-10'>CONTINUE WITH GOOGLE</button>
 
                 </div>
             </div>

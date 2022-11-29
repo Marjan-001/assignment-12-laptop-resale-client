@@ -5,7 +5,7 @@ const AllSellers = () => {
 
 
 
-    const { data: sellers = [] } = useQuery({
+    const { data: sellers = [], refetch } = useQuery({
 
         queryKey: ['sellers'],
         queryFn: async () => {
@@ -15,6 +15,22 @@ const AllSellers = () => {
             return data;
         }
     });
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure, you want to cancel this seller');
+        if (proceed) {
+            fetch(`https://assignment-12-laptop-resale-server.vercel.app/users/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+
+                    alert('deleted successfully');
+                    refetch()
+
+                })
+        }
+    }
 
     return (
         <div>
@@ -37,7 +53,7 @@ const AllSellers = () => {
                                     <th>{i + 1}</th>
                                     <td>{seller.name}</td>
                                     <td>{seller.email}</td>
-                                    <td><button className='btn btn-sm btn-ghost'>Delete</button></td>
+                                    <td><button onClick={() => handleDelete(seller._id)} className='btn btn-sm btn-ghost'>Delete</button></td>
                                 </tr>
 
                             )

@@ -3,7 +3,7 @@ import React from 'react';
 
 const AllBuyers = () => {
 
-    const { data: buyers = [] } = useQuery({
+    const { data: buyers = [], refetch } = useQuery({
 
         queryKey: ['sellers'],
         queryFn: async () => {
@@ -13,6 +13,23 @@ const AllBuyers = () => {
             return data;
         }
     })
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure, you want to cancel this buyer');
+        if (proceed) {
+            fetch(`https://assignment-12-laptop-resale-server.vercel.app/users/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+
+                    alert('deleted successfully');
+                    refetch()
+
+                })
+        }
+    }
     return (
         <div>
             <div className="overflow-x-auto">
@@ -34,7 +51,7 @@ const AllBuyers = () => {
                                     <th>{i + 1}</th>
                                     <td>{buyer.name}</td>
                                     <td>{buyer.email}</td>
-                                    <td><button className='btn btn-sm btn-ghost'>Delete</button></td>
+                                    <td><button onClick={() => handleDelete(buyer._id)} className='btn btn-sm btn-ghost'>Delete</button></td>
                                 </tr>
 
                             )
